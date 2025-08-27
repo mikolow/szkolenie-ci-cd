@@ -11,4 +11,13 @@ jobs:
           node-version: 22
       - run: npm ci
       - run: npm test
-
+  npm-audit:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up node latest
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm audit
