@@ -23,7 +23,7 @@ test('renders learn react link', () => {
 test('renders vite docs link', () => {
   render(<App />);
   const linkElement = screen.getByText(/vite docs/i);
-  expect(linkElement).not.toBeInTheDocument();
+  expect(linkElement).toBeInTheDocument();
 });
 
 
