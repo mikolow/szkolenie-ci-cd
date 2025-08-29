@@ -1,17 +1,6 @@
 name: tests
 on: [ push ]
 jobs:
-  test:
-    runs-on: ubuntu-22.04
-    needs: npm-audit
-    steps:
-      - uses: actions/checkout@v5
-      - name: Set up node latest
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - run: npm ci
-      - run: npm test
   npm-audit:
     runs-on: ubuntu-22.04
     steps:
@@ -23,3 +12,15 @@ jobs:
       - run: npm ci
       - run: npm audit
         continue-on-error: true
+  test:
+    runs-on: ubuntu-22.04
+    needs: npm-audit
+    environment: prod
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up node latest
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm test
