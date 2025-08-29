@@ -91,3 +91,4 @@ Vite Template React is built and maintained by [Safdar Jamal](https://safdarjama
 ## License
 
 This project is licensed under the terms of the [MIT license](https://github.com/SafdarJamal/vite-template-react/blob/main/LICENSE).
+# Test trigger
