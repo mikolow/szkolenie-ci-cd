@@ -3,6 +3,7 @@ on: [ push ]
 jobs:
   test:
     runs-on: ubuntu-22.04
+    needs: npm-audit
     steps:
       - uses: actions/checkout@v5
       - name: Set up node latest
